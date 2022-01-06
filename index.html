@@ -32,7 +32,8 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet-measure.js"></script>
-        <script src="data/virtual_layer4_1.js"></script>
+        <script src="data/aadt_per_lane_1.js"></script>
+        <script src="data/aadt_per_ft_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
@@ -69,7 +70,7 @@
         });
         layer_OpenStreetMap_0;
         map.addLayer(layer_OpenStreetMap_0);
-        function pop_virtual_layer4_1(feature, layer) {
+        function pop_aadt_per_lane_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">number_travel_lanes</th>\
@@ -87,10 +88,10 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_virtual_layer4_1_0(feature) {
+        function style_aadt_per_lane_1_0(feature) {
             if (feature.properties['aadt_per_lane'] >= 2.000000 && feature.properties['aadt_per_lane'] <= 1472.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(43,131,186,1.0)',
                 dashArray: '',
@@ -103,7 +104,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 1472.000000 && feature.properties['aadt_per_lane'] <= 2362.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(107,176,175,1.0)',
                 dashArray: '',
@@ -116,7 +117,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 2362.000000 && feature.properties['aadt_per_lane'] <= 3157.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(171,221,164,1.0)',
                 dashArray: '',
@@ -129,7 +130,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 3157.000000 && feature.properties['aadt_per_lane'] <= 3812.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(213,238,178,1.0)',
                 dashArray: '',
@@ -142,7 +143,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 3812.000000 && feature.properties['aadt_per_lane'] <= 4639.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(255,255,191,1.0)',
                 dashArray: '',
@@ -155,7 +156,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 4639.000000 && feature.properties['aadt_per_lane'] <= 5527.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(254,215,144,1.0)',
                 dashArray: '',
@@ -168,7 +169,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 5527.000000 && feature.properties['aadt_per_lane'] <= 7238.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(253,174,97,1.0)',
                 dashArray: '',
@@ -181,7 +182,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 7238.000000 && feature.properties['aadt_per_lane'] <= 15398.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(234,100,63,1.0)',
                 dashArray: '',
@@ -194,7 +195,7 @@
             }
             if (feature.properties['aadt_per_lane'] >= 15398.000000 && feature.properties['aadt_per_lane'] <= 185043.000000 ) {
                 return {
-                pane: 'pane_virtual_layer4_1',
+                pane: 'pane_aadt_per_lane_1',
                 opacity: 1,
                 color: 'rgba(215,25,28,1.0)',
                 dashArray: '',
@@ -206,22 +207,185 @@
             }
             }
         }
-        map.createPane('pane_virtual_layer4_1');
-        map.getPane('pane_virtual_layer4_1').style.zIndex = 401;
-        map.getPane('pane_virtual_layer4_1').style['mix-blend-mode'] = 'normal';
-        var layer_virtual_layer4_1 = new L.geoJson(json_virtual_layer4_1, {
+        map.createPane('pane_aadt_per_lane_1');
+        map.getPane('pane_aadt_per_lane_1').style.zIndex = 401;
+        map.getPane('pane_aadt_per_lane_1').style['mix-blend-mode'] = 'normal';
+        var layer_aadt_per_lane_1 = new L.geoJson(json_aadt_per_lane_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_virtual_layer4_1',
-            layerName: 'layer_virtual_layer4_1',
-            pane: 'pane_virtual_layer4_1',
-            onEachFeature: pop_virtual_layer4_1,
-            style: style_virtual_layer4_1_0,
+            dataVar: 'json_aadt_per_lane_1',
+            layerName: 'layer_aadt_per_lane_1',
+            pane: 'pane_aadt_per_lane_1',
+            onEachFeature: pop_aadt_per_lane_1,
+            style: style_aadt_per_lane_1_0,
         });
-        bounds_group.addLayer(layer_virtual_layer4_1);
-        map.addLayer(layer_virtual_layer4_1);
+        bounds_group.addLayer(layer_aadt_per_lane_1);
+        function pop_aadt_per_ft_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">streetwidth_min</th>\
+                        <td>' + (feature.properties['streetwidth_min'] !== null ? autolinker.link(feature.properties['streetwidth_min'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">number_roadbeds</th>\
+                        <td>' + (feature.properties['number_roadbeds'] !== null ? autolinker.link(feature.properties['number_roadbeds'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">aadt_per_ft</th>\
+                        <td>' + (feature.properties['aadt_per_ft'] !== null ? autolinker.link(feature.properties['aadt_per_ft'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_aadt_per_ft_2_0(feature) {
+            if (feature.properties['aadt_per_ft'] >= 0.125000 && feature.properties['aadt_per_ft'] <= 66.351852 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(43,131,186,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 66.351852 && feature.properties['aadt_per_ft'] <= 121.400000 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(107,176,175,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 121.400000 && feature.properties['aadt_per_ft'] <= 162.545455 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(171,221,164,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 162.545455 && feature.properties['aadt_per_ft'] <= 208.043478 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(213,238,178,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 208.043478 && feature.properties['aadt_per_ft'] <= 255.676667 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(255,255,191,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 255.676667 && feature.properties['aadt_per_ft'] <= 317.800000 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(254,215,144,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 317.800000 && feature.properties['aadt_per_ft'] <= 439.477273 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(253,174,97,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 439.477273 && feature.properties['aadt_per_ft'] <= 1225.250000 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(234,100,63,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 1225.250000 && feature.properties['aadt_per_ft'] <= 3000.000000 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(215,25,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+            if (feature.properties['aadt_per_ft'] >= 3000.000000 && feature.properties['aadt_per_ft'] <= 9999.000000 ) {
+                return {
+                pane: 'pane_aadt_per_ft_2',
+                opacity: 1,
+                color: 'rgba(141,90,153,0.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+            }
+        }
+        map.createPane('pane_aadt_per_ft_2');
+        map.getPane('pane_aadt_per_ft_2').style.zIndex = 402;
+        map.getPane('pane_aadt_per_ft_2').style['mix-blend-mode'] = 'normal';
+        var layer_aadt_per_ft_2 = new L.geoJson(json_aadt_per_ft_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_aadt_per_ft_2',
+            layerName: 'layer_aadt_per_ft_2',
+            pane: 'pane_aadt_per_ft_2',
+            onEachFeature: pop_aadt_per_ft_2,
+            style: style_aadt_per_ft_2_0,
+        });
+        bounds_group.addLayer(layer_aadt_per_ft_2);
+        map.addLayer(layer_aadt_per_ft_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Daily traffic per lane<br /><table><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_214720.png" /></td><td>2 - 1472</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_147223621.png" /></td><td>1472 - 2362</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_236231572.png" /></td><td>2362 - 3157</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_315738123.png" /></td><td>3157 - 3812</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_381246394.png" /></td><td>3812 - 4639</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_463955275.png" /></td><td>4639 - 5527</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_552772386.png" /></td><td>5527 - 7238</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_7238153987.png" /></td><td>7238 - 15398</td></tr><tr><td style="text-align: center;"><img src="legend/virtual_layer4_1_153981850438.png" /></td><td>15398 - 185043</td></tr></table>': layer_virtual_layer4_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Daily traffic per foot of width<br /><table><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_0660.png" /></td><td>0 - 66</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_661211.png" /></td><td>66 - 121</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_1211632.png" /></td><td>121 - 163</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_1632083.png" /></td><td>163 - 208</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_2082564.png" /></td><td>208 - 256</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_2563185.png" /></td><td>256 - 318</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_3184396.png" /></td><td>318 - 439</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_43912257.png" /></td><td>439 - 1225</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_122530008.png" /></td><td>1225 - 3000</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_ft_2_00009.png" /></td><td>0.0 - 0.0</td></tr></table>': layer_aadt_per_ft_2,'Daily traffic per travel lane<br /><table><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_214720.png" /></td><td>2 - 1472</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_147223621.png" /></td><td>1472 - 2362</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_236231572.png" /></td><td>2362 - 3157</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_315738123.png" /></td><td>3157 - 3812</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_381246394.png" /></td><td>3812 - 4639</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_463955275.png" /></td><td>4639 - 5527</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_552772386.png" /></td><td>5527 - 7238</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_7238153987.png" /></td><td>7238 - 15398</td></tr><tr><td style="text-align: center;"><img src="legend/aadt_per_lane_1_153981850438.png" /></td><td>15398 - 185043</td></tr></table>': layer_aadt_per_lane_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
